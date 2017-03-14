@@ -3,7 +3,7 @@ from ..blog.models import BlogEntry
 
 
 class BlogEntryPriority(models.Model):
-    blog_entry = models.OneToOneField(BlogEntry)
+    blog_entry = models.OneToOneField(BlogEntry, on_delete=models.CASCADE)
     priority = models.BooleanField(help_text='Is this entry high priority?')
 
     def __str__(self):
