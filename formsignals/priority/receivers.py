@@ -21,9 +21,9 @@ def add_priority_field_to_blog_entry_form(sender, form, **kwargs):
 
 
 @receiver(form_signals.post_clean, sender=BlogEntryForm)
-def check_priority_is_in_title(sender, form, cleaned_data, **kwargs):
+def check_priority_is_in_title(sender, form, **kwargs):
     # Only allow priority to be set if 'Priority' is also in the title
-    if cleaned_data.get('priority') and 'Priority' not in cleaned_data.get('title', ''):
+    if form.cleaned_data.get('priority') and 'Priority' not in form.cleaned_data.get('title', ''):
         form.add_error('priority', "Blog entry may not be marked with priority unless 'Priority' is in the title.")
 
 
