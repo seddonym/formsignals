@@ -1,6 +1,8 @@
 Installation
 ============
 
+.. code::
+
     git clone git@github.com:seddonym/formsignals.git
     cd formsignals
     mkvirtualenv -ppython3 formsignals
